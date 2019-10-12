@@ -25,20 +25,20 @@ of the UDP packets proved to be a dead end yet again so it was necessary to get 
 What most likely tripped some people up was that the default Wireshark preferences do not include the columns necessary to solve this problem. \
 \
 By columns, I'm referring to these:
-![](wire3.png)
+![](wire3.png) \
 To edit the columns, I went to \
 `Edit -> Preferences -> Appearance -> Columns` \
 and added `Souce port` to my list so that it looked like this: 
-![](wire2.png)
+![](wire2.png) \
 \
 Applying a filter to the packets so that we are only viewing UDP packets and sorting them by source IP address in decending order looks like this: \
-![](wire4.png)
+![](wire4.png) \
 Scrolling through the source ports, we see something interesting.
-![](wire5.png)
+![](wire5.png) \
 It may not be obvious to someone who has never looked at a pcap before, but this is very unusual (especially considering all the packets came from the same source IP address). \
 \
 Isolating the source IP address, we get something that looks like this: 
-![](wire6.png)
+![](wire6.png) \
 Using just a basic decimal to ascii converter online, we find that `112` converts to `p`. Huh. We keep going and discover that `105` converts to `i` and `099` converts to `c`. We could
 do this by hand and wouldn't need any tools besides Wireshark and the online converter, but I'm a lazy person so I wrote a bash script to do this for me.
 ```bash
