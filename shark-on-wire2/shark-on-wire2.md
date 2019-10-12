@@ -35,7 +35,7 @@ Applying a filter to the packets so that we are only viewing UDP packets and sor
 ![](wire4.png) \
 Scrolling through the source ports, we see something interesting. \
 ![](wire5.png) \
-It may not be obvious to someone who has never looked at a pcap before, but this is very unusual (especially considering all the packets came from the same source IP address). \
+This is very unusual (especially considering all the packets came from the same source IP address). \
 \
 Isolating the source IP address, we get something that looks like this: \
 ![](wire6.png) \
